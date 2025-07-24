@@ -19,6 +19,11 @@ spec:
         image: ghcr.io/leesuha98/tta-devops/my-app:latest  # GHCR 이미지 경로
         ports:
         - containerPort: 8000
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      insecure: true
       # imagePullSecrets:
       # - name: ghcr-secret  # 생성한 ImagePullSecret 참조
 
